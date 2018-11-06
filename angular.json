@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ss-schematics",
+            "outputPath": "dist/client",
             "index": "src/client/index.html",
             "main": "src/client/main.ts",
             "polyfills": "src/client/polyfills.ts",
@@ -24,12 +24,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/client/environments/environment.ts",
-                  "with": "src/client/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/client/environments/environment.ts",
+                "with": "src/client/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
