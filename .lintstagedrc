@@ -1,0 +1,6 @@
+{
+  "ignore": ["package-lock.json", "package.json", "yarn.lock"],
+  "linters": {
+    '*.{ts,js,json,scss,css}': ['npm run lint', 'npm run format', 'git add'],
+  }
+}
