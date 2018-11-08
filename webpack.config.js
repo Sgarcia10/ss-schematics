@@ -14,14 +14,20 @@ module.exports = {
   module: {
     rules: [{
       test: /\.tsx?$/,
-      use: 'ts-loader',
+      loader: 'ts-loader',
       exclude: /node_modules/,
+      options: {
+        reportFiles: ['src/**/*.{ts,tsx}']
+      }
     }, ],
   },
-  mode: 'production',
+  stats: {
+    warningsFilter: /Critical dependency/
+  },
+  mode: 'none',
   devtool: 'source-map',
   plugins: [
-    new CleanWebpackPlugin(['dist/server']),
+    new CleanWebpackPlugin(['build/server']),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(`${process.env.ENV}`)
     }),
@@ -35,9 +41,9 @@ module.exports = {
     })]
   },
   output: {
-    path: path.join(__dirname, 'dist/server'),
+    path: path.join(__dirname, 'build/server'),
     filename: '[name].js',
-    publicPath: 'dist',
+    publicPath: 'build',
     libraryTarget: 'commonjs',
   },
 };

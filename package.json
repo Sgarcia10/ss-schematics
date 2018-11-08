@@ -18,7 +18,7 @@
     "server:dev": "nodemon",
     "client:dev": "ng serve --open --proxy-config proxy.conf.json",
     "client:build": "ng build",
-    "start": "node dist/server/main.js"
+    "start": "node build/server/main.js"
   },
   "private": true,
   "dependencies": {

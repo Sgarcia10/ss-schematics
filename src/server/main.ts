@@ -7,6 +7,6 @@ const CLIENT_PATH = '../client';
 async function bootstrap() {
   const app = await NestFactory.create(MainModule);
   app.use('/', express.static(join(__dirname, CLIENT_PATH)));
-  await app.listen(3000);
+  await app.listen(5000);
 }
 bootstrap();

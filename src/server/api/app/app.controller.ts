@@ -10,7 +10,7 @@ export class AppController {
   ) {}
 
   @Get()
-  root(): string {
+  root(): {} {
     this.logger.info('Hola');
     return this.appService.root();
   }
