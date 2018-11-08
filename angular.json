@@ -44,7 +44,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "ss-schematics:build",
-            "port": 5000,
+            "port": 4200,
             "host": "0.0.0.0"
           },
           "configurations": {
