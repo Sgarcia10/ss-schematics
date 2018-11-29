@@ -28,6 +28,8 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/",
+              "deployUrl": "build/",
               "fileReplacements": [{
                 "replace": "src/client/environments/environment.ts",
                 "with": "src/client/environments/environment.prod.ts"

@@ -15,9 +15,11 @@ export class AppComponent {
   title2: string;
 
   constructor(private store: Store<AppState>) {
+    this.title2 = '';
     this.appState$ = this.store.pipe(select(selectApp));
     this.appState$.subscribe(state => {
-      this.title2 = state.msg['title'];
+      if (state.msg['title']) this.title2 = state.msg['title'];
+      else this.title2 = 'Server does not response!';
     });
   }
 

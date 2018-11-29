@@ -3,8 +3,6 @@ import { AppController } from './app/app.controller';
 import { AppService } from './app/app.service';
 import * as healthcheck from 'express-healthcheck';
 import * as morgan from 'morgan';
-import * as compression from 'compression';
-import * as helmet from 'helmet';
 import { SharedModule } from '../shared/shared.module';
 
 @Module({
@@ -21,11 +19,6 @@ export class ApiModule {
         )
       )
       .with('MainModule')
-      .forRoutes({
-        path: '*',
-        method: RequestMethod.ALL
-      })
-      .apply(compression(), helmet())
       .forRoutes({
         path: '*',
         method: RequestMethod.ALL

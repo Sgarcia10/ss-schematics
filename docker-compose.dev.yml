@@ -1,7 +1,7 @@
 version: '2'
 services:
   reverse_proxy:
-    image: fe-affiliates_reverse_proxy:latest
+    image: ss-schematics-reverse-proxy:latest
     links:
       - node_server:nginx_backend
     environment:
@@ -12,7 +12,7 @@ services:
     volumes_from:
       - node_server
   node_server:
-    image: fe-affiliates:latest
+    image: ss-schematics:latest
     volumes:
       - /opt/app/build/
     environment:
