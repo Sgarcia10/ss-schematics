@@ -1,0 +1,23 @@
+version: '2'
+services:
+  reverse_proxy:
+    image: fe-affiliates_reverse_proxy:latest
+    links:
+      - node_server:nginx_backend
+    environment:
+      - WEB_REVERSE_PROXY_PORT=5000
+      - STATIC_DIR=/opt/app/build/client/
+    ports:
+      - 80:80
+    volumes_from:
+      - node_server
+  node_server:
+    image: fe-affiliates:latest
+    volumes:
+      - /opt/app/build/
+    environment:
+      - ENV=development
+    expose:
+      - '5000'
+    ports:
+      - 5000:5000

@@ -1,0 +1,16 @@
+
+server {
+  listen 80 default_server;
+  add_header X-Cache nginx-$hostname;
+
+  location /affiliates/build/ {
+    add_header X-Forwarded-Host "nginx-proxy";
+    alias ${STATIC_DIR};
+  }
+
+  location /affiliates/* {
+    proxy_set_header Host "ss-schematics";
+    proxy_pass http://node_server:${WEB_REVERSE_PROXY_PORT};
+  }
+}
+

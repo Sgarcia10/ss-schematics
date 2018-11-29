@@ -1,4 +1,4 @@
-FROM node:8.11.1 as base
+FROM node:8.12.0 as base
 WORKDIR /opt/app
 
 FROM base as build

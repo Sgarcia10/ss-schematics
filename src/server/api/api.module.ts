@@ -5,7 +5,7 @@ import * as healthcheck from 'express-healthcheck';
 import * as morgan from 'morgan';
 import * as compression from 'compression';
 import * as helmet from 'helmet';
-import { SharedModule } from 'shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 @Module({
   imports: [SharedModule],

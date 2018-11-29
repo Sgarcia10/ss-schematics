@@ -8,7 +8,11 @@
       "sourceRoot": "src/client",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -19,7 +23,7 @@
             "polyfills": "src/client/polyfills.ts",
             "tsConfig": "src/client/tsconfig.app.json",
             "assets": ["src/client/favicon.ico", "src/client/assets"],
-            "styles": ["src/client/styles.css"],
+            "styles": ["src/client/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -60,16 +64,8 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/client/test.ts",
-            "polyfills": "src/client/polyfills.ts",
-            "tsConfig": "src/client/tsconfig.spec.json",
-            "karmaConfig": "src/client/karma.conf.js",
-            "styles": ["src/client/styles.css"],
-            "scripts": [],
-            "assets": ["src/client/favicon.ico", "src/client/assets"]
-          }
+          "builder": "@angular-builders/jest:run",
+          "options": {}
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
