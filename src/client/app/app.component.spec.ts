@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { Store, StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from '../../store';
+import { reducers, metaReducers } from './store';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

@@ -10,7 +10,7 @@ import { reducers, metaReducers } from './store/index';
 import { CoreModule } from './core/core.module';
 
 import { environment } from '../environments/environment';
-import { AppComponent } from './containers/app/app.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],

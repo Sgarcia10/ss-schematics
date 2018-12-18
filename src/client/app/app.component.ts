@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { AppState, AppActions } from '../../store/app';
+import { AppState, AppActions } from './store/app';
 import { Observable } from 'rxjs';
-import { selectApp } from '../../store';
+import { selectApp } from './store';
 
 @Component({
   selector: 'app-root',
